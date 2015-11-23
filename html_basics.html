@@ -1,0 +1,267 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<style>
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: "Helvetica Neue", Helvetica, "Hiragino Sans GB", Arial, sans-serif;
+    font-size: 13px;
+    line-height: 18px;
+    color: #737373;
+    background-color: white;
+    margin: 10px 13px 10px 13px;
+}
+table {
+	margin: 10px 0 15px 0;
+	border-collapse: collapse;
+}
+td,th {	
+	border: 1px solid #ddd;
+	padding: 3px 10px;
+}
+th {
+	padding: 5px 10px;	
+}
+
+a {
+    color: #0069d6;
+}
+a:hover {
+    color: #0050a3;
+    text-decoration: none;
+}
+a img {
+    border: none;
+}
+p {
+    margin-bottom: 9px;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #404040;
+    line-height: 36px;
+}
+h1 {
+    margin-bottom: 18px;
+    font-size: 30px;
+}
+h2 {
+    font-size: 24px;
+}
+h3 {
+    font-size: 18px;
+}
+h4 {
+    font-size: 16px;
+}
+h5 {
+    font-size: 14px;
+}
+h6 {
+    font-size: 13px;
+}
+hr {
+    margin: 0 0 19px;
+    border: 0;
+    border-bottom: 1px solid #ccc;
+}
+blockquote {
+    padding: 13px 13px 21px 15px;
+    margin-bottom: 18px;
+    font-family:georgia,serif;
+    font-style: italic;
+}
+blockquote:before {
+    content:"\201C";
+    font-size:40px;
+    margin-left:-10px;
+    font-family:georgia,serif;
+    color:#eee;
+}
+blockquote p {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 18px;
+    margin-bottom: 0;
+    font-style: italic;
+}
+code, pre {
+    font-family: Monaco, Andale Mono, Courier New, monospace;
+}
+code {
+    background-color: #fee9cc;
+    color: rgba(0, 0, 0, 0.75);
+    padding: 1px 3px;
+    font-size: 12px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+pre {
+    display: block;
+    padding: 14px;
+    margin: 0 0 18px;
+    line-height: 16px;
+    font-size: 11px;
+    border: 1px solid #d9d9d9;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+pre code {
+    background-color: #fff;
+    color:#737373;
+    font-size: 11px;
+    padding: 0;
+}
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:10px auto;
+    }
+}
+@media print {
+	body,code,pre code,h1,h2,h3,h4,h5,h6 {
+		color: black;
+	}
+	table, pre {
+		page-break-inside: avoid;
+	}
+}
+</style>
+<title>html basics</title>
+
+</head>
+<body>
+<h1>html basics</h1>
+
+<h3>HTML: hyper text markup language</h3>
+
+<ul>
+<li><strong>html</strong> is a standardized <strong>markup language</strong> for writing webpages.<br></li>
+<li><strong>markup languages</strong> are used to annotate a document in a way that is <em>syntactically distinguishable</em> from the text. (this document was written in the markup language <strong>markdown</strong>)</li>
+<li><strong>hypertexts</strong> are texts which <em>link</em> to other texts. (sometimes called <strong>hypermedia</strong> when referring to <em>networked media</em> other than text like video or images).</li>
+</ul>
+
+
+<h3>what <em>is</em> an HTML document?</h3>
+
+<p>HTML documents are plaintext documents that end in the extension <code>.html</code>. HTML documents consist of a standard structure of <strong>elements</strong> that can be recognized and rendered by all modern browsers. HTML documents are styled through <strong>Cascading Style Sheets</strong>, or <strong>CSS</strong>. These use the extension <code>.css</code>. An HTML document knows what stylesheet to use through a <strong>link</strong>... more on that later.
+HTML documents are transmitted across networks through <strong>HTTP requests</strong>. Your browser will <strong>request</strong> a webpage from an <strong>IP address</strong> (an Internet Protocol address (IP address) is a numerical label assigned to each device (e.g., computer, printer) participating in a computer network communicating through the Internet), then the associated server will send back the requested HTML page.</p>
+
+<h5>the basic skeleton of an HTML page</h5>
+
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;My HTML Page&lt;/title&gt;
+  &lt;link rel="stylesheet" href="MyStylesheet.css" type="text/css"&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>the first line of the code, <code>&lt;!DOCTYPE html&gt;</code> just declares that the following document will be written in HTML. after that, the rest of the document is <strong>nested</strong> inside a single set of <code>&lt;html&gt;</code> tags.
+at this point our HTML is split into 2 sections, the <code>&lt;head&gt;</code> and the <code>&lt;body&gt;</code>.</p>
+
+<h6>the head</h6>
+
+<p>Between the <code>&lt;head&gt;&lt;/head&gt;</code> tags we put fairly obligatory information like the <strong>charset</strong> or character set of the text, the <strong>title</strong> of the page and a link to the <strong>stylesheet</strong> for your page. if you import fonts from <strong>Google Fonts</strong> or use <strong>Javascript</strong> files in your page, you would also link to them in this section.<BR>
+<em><strong>IMPORTANT:</strong> Nothing in the <code>&lt;head&gt;</code> section will be rendered on the actual HTML page. this is just information for how the page will be rendered and accessed by browsers and databases.</em></p>
+
+<h6>the body</h6>
+
+<p>the actual content of your webpage lives between the
+<code>&lt;body&gt;</code> tags. here are some standard HTML elements you can use to organize your content within the body:</p>
+
+<ul>
+<li><code>&lt;p&gt;&lt;/p&gt;</code> is used to enclose paragraphs.</li>
+<li><code>&lt;a href="http://my-link.org"&gt;my link&lt;/a&gt;</code> is used to create links to other web pages.</li>
+<li><code>&lt;h1,2,3...6&gt;&lt;/h1,2,3...6&gt;</code> is used do do different sizes of heading text. for example, the largest heading size would be <code>&lt;h1&gt;</code> and the smallest is <code>&lt;h6&gt;</code>.</li>
+<li><code>&lt;img src="http://my-site.org/image3.png" alt="Image 3" width="100" height"100"&gt;</code>embeds images in the page. the <strong>alt</strong> attribute is for text to be used if the image can't be loaded or for people using Accessibility Services to listen to the website. Width and height are self-explanatory. the src or source attribute is the only
+required one; the rest are optional.</li>
+</ul>
+
+
+<p>some elements are a bit more complicated--for example, the <code>&lt;video&gt;</code> and <code>&lt;audio&gt;</code> elements.
+here is a typical use of the <code>&lt;video&gt;</code> element:</p>
+
+<pre><code>&lt;video width="320" height="240" autoplay&gt;
+  &lt;source src="movie.mp4" type="video/mp4"&gt;
+  &lt;source src="movie.ogg" type="video/ogg"&gt;
+Your browser does not support the video tag.
+&lt;/video&gt;
+</code></pre>
+
+<p>You probably recognize some of the attributes from the image tag, like src and width/height. however, things are structured a bit differently with video. for example, you can use the <strong>autoplay</strong> attribute to make the video start playing automatically. additionally, the source URLs are nested inside the video element in <code>&lt;source&gt;</code> tags and paired with unique <strong>types</strong>. this is so that your browser picks the right video format for your computer. If all else fails, it will display the text instead.</p>
+
+<p>the <code>&lt;audio&gt;</code> element works similarly.</p>
+
+<pre><code>&lt;audio controls&gt;
+  &lt;source src="horse.ogg" type="audio/ogg"&gt;
+  &lt;source src="horse.mp3" type="audio/mpeg"&gt;
+Your browser does not support the audio element.
+&lt;/audio&gt;
+</code></pre>
+
+<p>the <strong>controls</strong> attribute means that transport controls (play, pause, etc) will be displayed on the page. <strong>controls</strong> can be used with the video element as well, just as <strong>autoplay</strong> can be used with audio. other attributes you can use include <strong>loop</strong>, <strong>muted</strong> and <strong>preload</strong>.</p>
+
+<h3>CSS</h3>
+
+<p>if you wrote your whole website in just HTML, it would work just fine but it would look really ugly-- without custom CSS, websites are usually just rendered in Times New Roman on a white background, left-aligned. instead, we can write a <strong>style sheet</strong> to make our website look however we want it to!</p>
+
+<p>here's the standard syntax for stylesheets:</p>
+
+<pre><code>
+body {
+    background-color: blue;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+p {
+    font-size: 12px;
+}
+
+a {
+    text-decoration: none;
+    color: yellow;
+}
+
+a:hover {
+    background-color: red;
+}
+</code></pre>
+
+<p>this would display our website with a blue background and using the font Helvetica. our main <code>&lt;p&gt;</code> text would be 12 pixels high and our links would be yellow and have no underline--when we <strong>hover</strong> over them with the mouse, they would get a red highlight.</p>
+
+<p>There's a lot more you can do with HTML and CSS, but this should be enough information to get you started without feeling too overwhelmed.</p>
+
+<p>:)</p>
+</body>
+</html>
